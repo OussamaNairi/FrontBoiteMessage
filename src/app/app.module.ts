@@ -7,11 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { SendmessagesComponent } from './sendmessages/sendmessages.component';
 import { ReceivemessageComponent } from './receivemessage/receivemessage.component';
 import { SendComponent } from './send/send.component';
-import { HttpClientModule } from '@angular/common/http';
-import { GestionService } from './gestion.service';
+import {HttpClientModule} from '@angular/common/http';
+import {GestionService} from './gestion.service';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { FormsModule } from '@angular/forms';
-
+import {FormsModule} from '@angular/forms'
+//import { JwtModule } from "@auth0/angular-jwt";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +22,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule, FormsModule,
-    NgxWebstorageModule.forRoot()
+    AppRoutingModule, FormsModule,//JwtModule ,
+    HttpClientModule, NgxWebstorageModule.forRoot(),
   ],
   providers: [GestionService],
   bootstrap: [AppComponent]

@@ -1,1 +1,50 @@
-<p>sendmessages works!</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Messagerie(ENIG)</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"> Send </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" > {{userconnect.nom}}(Déconnexion) </a> </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row" style="margin-top: 70px;margin-left: 10px;">
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> Envoyer un message</div>
+        <div class="panel-body">
+        
+          <div class="form-group">
+            <label>Sujet</label>
+            <input type="text" class="form-control" [(ngModel)]="message.sujet" >
+          </div>
+          
+          <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control" rows="4" [(ngModel)]="message.contenu"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>Vers</label>
+            <select class="form-control" [(ngModel)]="message.userreceive">
+              <option *ngFor="let u of users"  [ngValue]="u" > {{u.nom}}</option>
+            </select>
+          </div>
+          
+          <button class="btn btn-default" (click)= "send();">Submit</button>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

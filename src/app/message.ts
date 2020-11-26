@@ -1,11 +1,11 @@
 import { User } from './user';
 
 export class Message{
-    private id:number;
-    private sujet:string;
-    private contenu:string;
-    private usersend:User;
-    private userreceive:User;
+    public id:number;
+    public sujet:string;
+    public contenu:string;
+    public usersend:User;
+    public userreceive:User;
 
     constructor(){
 
