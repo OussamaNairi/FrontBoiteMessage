@@ -16,39 +16,39 @@ export class GestionService {
 
   getUserByUserName(username:string){
     let hs=new HttpHeaders({"Authorization":localStorage.getItem("token")})
-    return this.http.get("https://back-essat.herokuapp.com/rest/user/"+username, {headers:hs})
+    return this.http.get("http://127.0.0.1:8080/rest/user/"+username, {headers:hs})
   }
 
   getALlMessagesRecus(id:number){
     let hs=new HttpHeaders({"Authorization":localStorage.getItem("token")})
-    return this.http.get("https://back-essat.herokuapp.com/rest/messagesrecus/"+id, {headers:hs})
+    return this.http.get("http://127.0.0.1:8080/rest/messagesrecus/"+id, {headers:hs})
   }
   getALlMessagesEnvoyes(id:number){
     let hs=new HttpHeaders({"Authorization":localStorage.getItem("token")})
-    return this.http.get("https://back-essat.herokuapp.com/rest/messagesenvoyes/"+id, {headers:hs})
+    return this.http.get("http://127.0.0.1:8080/rest/messagesenvoyes/"+id, {headers:hs})
   }
   getUserById(id:number){
     
-    return this.http.get("https://back-essat.herokuapp.com/rest/user/"+id)
+    return this.http.get("http://127.0.0.1:8080/rest/user/"+id)
   }
   verif(username:string, password:string){
-    return this.http.get("https://back-essat.herokuapp.com/rest/verif/"+username+"/"+password)
+    return this.http.get("http://127.0.0.1:8080/rest/verif/"+username+"/"+password)
   }
   getUsers(){
-    return this.http.get("https://back-essat.herokuapp.com/rest/users");
+    return this.http.get("http://127.0.0.1:8080/rest/users");
   }
   sendMessage(message : any){
     let hs=new HttpHeaders({"Authorization":localStorage.getItem("token")})
-    return this.http.post("https://back-essat.herokuapp.com/rest/addMessage",message, {headers:hs})
+    return this.http.post("http://127.0.0.1:8080/rest/addMessage",message, {headers:hs})
   }
   deleteMessage(id:number){
     let hs=new HttpHeaders({"Authorization":localStorage.getItem("token")})
-    return this.http.delete("https://back-essat.herokuapp.com/rest/deleteMessage/"+id, {headers:hs})
+    return this.http.delete("http://127.0.0.1:8080/rest/deleteMessage/"+id, {headers:hs})
   }
 
 
   login(request){
-    return this.http.post("https://back-essat.herokuapp.com/auth/login",request,{observe:'response'})
+    return this.http.post("http://127.0.0.1:8080/auth/login",request,{observe:'response'})
   }
 
   saveToken(token){
